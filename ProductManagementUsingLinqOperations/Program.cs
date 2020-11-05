@@ -27,10 +27,8 @@ namespace ProductManagementUsingLinqOperations
                 new ProductReview(){ProductID=16, UserID=10, Rating=5, Review="Good", IsLike=true}
             };
 
-            foreach (var list in reviewList)
-            {
-                Console.WriteLine("Product ID: " + list.ProductID + "\tUser ID: " + list.UserID + "\tRating: " + list.Rating + "\tReview: " + list.Review + "\tIsLike: " + list.IsLike);
-            }
+            Management management = new Management();
+            management.GetTopRecords(reviewList);
         }
 
     }
