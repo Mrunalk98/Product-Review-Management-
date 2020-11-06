@@ -28,7 +28,7 @@ namespace ProductManagementUsingLinqOperations
             };
 
             Management management = new Management();
-            management.GetSelectedRecords(reviewList);
+            management.GetCountOfRecords(reviewList);
         }
 
     }

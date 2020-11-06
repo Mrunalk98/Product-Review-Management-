@@ -30,5 +30,14 @@ namespace ProductManagementUsingLinqOperations
                 Console.WriteLine("Product ID: " + list.ProductID + "\tUser ID: " + list.UserID + "\tRating: " + list.Rating + "\tReview: " + list.Review + "\tIsLike: " + list.IsLike);
             }
         }
+
+        public void GetCountOfRecords(List<ProductReview> productReviews)
+        {
+            var recordsCount = productReviews.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordsCount)
+            {
+                Console.WriteLine("Product ID: " + list.ProductID + "\t Count: " + list.Count);
+            }
+        }
     }
 }
