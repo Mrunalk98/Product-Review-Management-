@@ -19,5 +19,16 @@ namespace ProductManagementUsingLinqOperations
                 Console.WriteLine("Product ID: " + list.ProductID + "\tUser ID: " + list.UserID + "\tRating: " + list.Rating + "\tReview: " + list.Review + "\tIsLike: " + list.IsLike);
             }
         }
+
+        public void GetSelectedRecords(List<ProductReview> productReviews)
+        {
+            var records = from products in productReviews
+                          where (products.ProductID == 1 || products.ProductID == 4 || products.ProductID == 9) && products.Rating > 3
+                          select products;
+            foreach (var list in records)
+            {
+                Console.WriteLine("Product ID: " + list.ProductID + "\tUser ID: " + list.UserID + "\tRating: " + list.Rating + "\tReview: " + list.Review + "\tIsLike: " + list.IsLike);
+            }
+        }
     }
 }
